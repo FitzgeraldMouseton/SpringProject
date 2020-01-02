@@ -49,6 +49,7 @@ public class JdbcOrderRepository implements OrderRepository {
         Map<String, Object> values =
                 objectMapper.convertValue(order, Map.class);
         values.put("placedAt", order.getPlacedAt());
+        //values.put("DELIVERYNAME", order.getName());
         long orderId =
                 orderInserter
                         .executeAndReturnKey(values)
